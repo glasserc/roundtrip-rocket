@@ -78,7 +78,7 @@ fn main() {
     assert_eq!(response.status(), Status::Ok);
     assert_eq!(response.body_string(), Some("{\"user\":\"Ethan\"}".into()));
     let raw_cookie = response.headers().get_one("Set-Cookie").expect("login should return a cookie");
-    let cookie = Cookie::parse(raw_cookie).expect("couldn't parse cookie");
+    let cookie = Cookie::parse_encoded(raw_cookie).expect("couldn't parse cookie");
     let mut response = client
         .get("/whoami")
         .cookie(cookie.into_owned())
