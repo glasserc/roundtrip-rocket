@@ -1,0 +1,10 @@
+[package]
+name = "roundtrip-rocket"
+version = "0.1.0"
+authors = ["ethan <ethan@betacantrips.com>"]
+
+[dependencies]
+rocket = "0.3.17"
+rocket_codegen = "0.3.17"
+rocket_contrib = { version = "0.3.17", features = ["json"] }
+serde_json = "1.0"
